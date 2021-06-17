@@ -2,6 +2,7 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 /**
+ *
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
  */
@@ -60,14 +61,21 @@ module.exports.getAccessToken = async (event) => {
     client_secret,
     redirect_uris[0]
   );
+
   // Decode authorization code extracted from the URL query
   const code = decodeURIComponent(`${event.pathParameters.code}`);
 
   return new Promise((resolve, reject) => {
+    /**
+     *  Exchange authorization code for access token with a “callback” after the exchange,
+     *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
+     */
+
     oAuth2Client.getToken(code, (err, token) => {
       if (err) {
         return reject(err);
       }
+
       return resolve(token);
     });
   })
@@ -93,7 +101,7 @@ module.exports.getAccessToken = async (event) => {
       };
     });
 };
-//End of accessToken funct
+// End of accessToken funct
 
 module.exports.getCalenderEvents = async (event) => {
   // The values used to instantiate the OAuthClient are at the top of the file
@@ -103,7 +111,9 @@ module.exports.getCalenderEvents = async (event) => {
     redirect_uris[0]
   );
   // Decode authorization code extracted from the URL query
-  const access_token = decodeURIComponent(`${event.pathParameters.code}`);
+  const access_token = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
 
   return new Promise((resolve, reject) => {
     oAuth2Client.setCredentials({ access_token });
@@ -147,3 +157,4 @@ module.exports.getCalenderEvents = async (event) => {
       };
     });
 };
+// end of getCalendarEvents funct
