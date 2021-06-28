@@ -15,12 +15,21 @@ class Event extends Component {
   };
 
   render() {
-    const event = this.props;
+    const { event } = this.props;
     return (
       <div className="event">
         <h1 className="name">{event.summary}</h1>
-        <h2 className="details">{event.description}</h2>
+        <p>{event.start.dateTime}</p>
         <p className="locations">{event.location}</p>
+
+        {this.state.showHideDetails && (
+          <div className="event-details">
+            <h2>About event:</h2>
+
+            <a href={event.htmlLink}>See Details on Google Calendar</a>
+            <p>{event.description}</p>
+          </div>
+        )}
 
         <button
           className="details-btn"
