@@ -13,15 +13,15 @@ describe("NumberOfEvents /> component", () => {
   });
 
   test("renders text input correctly", () => {
-    const numberOfEvents = NumberOfEventsWrapper.state("numberOfEvents");
+    const eventNumber = NumberOfEventsWrapper.state("numberOfEvents");
     expect(NumberOfEventsWrapper.find(".number").prop("value")).toBe(
-      numberOfEvents
+      eventNumber
     );
   });
 
   test("selecting a suggestion should change query state", () => {
     NumberOfEventsWrapper.setState({
-      numberOfEvents: 15,
+      eventNumber: 15,
     });
     const eventObject = { target: { value: 2 } };
     NumberOfEventsWrapper.find(".number").simulate("change", eventObject);
