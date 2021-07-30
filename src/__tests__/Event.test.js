@@ -12,18 +12,18 @@ describe("Event /> component", () => {
     expect(EventWrapper.find(".event-summary")).toHaveLength(1);
   });
 
-  // test("render event Title", () => {
-  //   expect(EventWrapper.find(".event-details")).toHaveLength(1);
-  // });
+  test("render event Title", () => {
+    expect(EventWrapper.find(".event-details")).toHaveLength(1);
+  });
 
-  //   test("have a show detail button", () => {
-  //     expect(EventWrapper.find(".details-btn")).toHaveLength(1);
-  //   });
+  test("have a show detail button", () => {
+    expect(EventWrapper.find(".details-btn")).toHaveLength(1);
+  });
 
-  //   test("render additional info when user clicks on 'details' button", () => {
-  //     const changeState = EventWrapper.state({ showMore: true });
-  //     EventWrapper.setState({ showHideDetails: false });
-  //     EventWrapper.find(".details-btn").simulate("click", changeState);
-  //     expect(EventWrapper.state("showHideDetails")).toBe(true);
-  //   });
+  test("render additional info when user clicks on 'details' button", () => {
+    const changeState = EventWrapper.state({ showMore: true });
+    EventWrapper.setState({ showHideDetails: false });
+    EventWrapper.find(".details-btn").simulate("click", changeState);
+    expect(EventWrapper.state("showHideDetails")).toBe(true);
+  });
 });

@@ -19,7 +19,7 @@ class NumberOfEvents extends Component {
         <br></br>
         <input
           type="text"
-          className="numberOfEvents"
+          className="EventsNumber"
           value={numberOfEvents}
           onChange={(e) => this.handelInputChanged(e)}
         ></input>
@@ -29,3 +29,4 @@ class NumberOfEvents extends Component {
 }
 
 export default NumberOfEvents;
+

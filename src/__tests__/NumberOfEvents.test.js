@@ -8,23 +8,20 @@ describe("NumberOfEvents /> component", () => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents />);
   });
 
-  test("render number input", () => {
-    expect(NumberOfEventsWrapper.find(".number")).toHaveLength(1);
+  test("render numberOfEvents input", () => {
+    expect(NumberOfEventsWrapper.find(".NumberOfEvents")).toHaveLength(1);
   });
 
-  test("renders text input correctly", () => {
-    const eventNumber = NumberOfEventsWrapper.state("numberOfEvents");
-    expect(NumberOfEventsWrapper.find(".number").prop("value")).toBe(
-      eventNumber
+  test("display 32 events by default", () => {
+    expect(NumberOfEventsWrapper.find(".EventsNumber").prop("value")).toEqual(
+      32
     );
   });
 
-  test("selecting a suggestion should change query state", () => {
-    NumberOfEventsWrapper.setState({
-      eventNumber: 15,
-    });
-    const eventObject = { target: { value: 2 } };
-    NumberOfEventsWrapper.find(".number").simulate("change", eventObject);
-    expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(2);
+  test("renders text input correctly", () => {
+    const numberOfEvents = NumberOfEventsWrapper.state("numberOfEvents");
+    expect(NumberOfEventsWrapper.find(".EventsNumber").prop("value")).toBe(
+      numberOfEvents
+    );
   });
 });
