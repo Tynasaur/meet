@@ -1,29 +1,31 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Event from "../Event";
+import { mockData } from "../mock-data";
 
 describe("Event /> component", () => {
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />);
+    EventWrapper = shallow(<Event event={mockData[1]} />);
   });
 
   test("render single event", () => {
-    expect(EventWrapper.find(".event-summary")).toHaveLength(1);
+    expect(EventWrapper.find(".event")).toHaveLength(1);
   });
 
   test("render event Title", () => {
-    expect(EventWrapper.find(".event-details")).toHaveLength(1);
+    expect(EventWrapper.find(".event-summary")).toHaveLength(1);
   });
 
-  test("have a show detail button", () => {
-    expect(EventWrapper.find(".details-btn")).toHaveLength(1);
+  test("render additional info when user clicks on 'showMore' button", () => {
+    EventWrapper.setState({ show: false });
+    EventWrapper.find(".showMore").simulate("click");
+    expect(EventWrapper.state("show")).toEqual(true);
   });
 
-  test("render additional info when user clicks on 'details' button", () => {
-    const changeState = EventWrapper.state({ showMore: true });
-    EventWrapper.setState({ showHideDetails: false });
-    EventWrapper.find(".details-btn").simulate("click", changeState);
-    expect(EventWrapper.state("showHideDetails")).toBe(true);
-  });
+  test("hide additional info when user clicks 'showLess' button", () => {
+    EventWrapper.setState({ show: true });
+    EventWrapper.find(".showLess").simulate("click");
+    expect(EventWrapper.find(".event-details")).toHaveLength(0);
+  })
 });
