@@ -51,7 +51,7 @@ input[type="text"], input[type="number"] {
 
 .suggestions {
   width: 250px;
-  position: absolute;
+  /* position: relative; */
   z-index: 2;
   align-self: center;
   margin: 0;
@@ -76,7 +76,7 @@ input[type="text"], input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event-details {
+.event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
@@ -85,7 +85,7 @@ input[type="text"], input[type="number"] {
   position: relative;
 }
 
-.details-btn {
+.showMore, .showLess {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -128,8 +128,8 @@ input[type="text"], input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  position: relative;
+  top: 10px;
 }
 
 .data-vis-wrapper {
