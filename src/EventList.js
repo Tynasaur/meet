@@ -5,7 +5,6 @@ class EventList extends Component {
   render() {
     const { events } = this.props;
     return (
-      //changed from EventList
       <ul className="event-list">
         {events.map((event) => (
           <li key={event.id}>
