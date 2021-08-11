@@ -1,11 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+body {
+  background-image: url("img/cityBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: inherit;
+  background-attachment: fixed;
+}
+
+h1, h4 {
+  color: #FDF5DC;
+  text-align: center;
+}
+
+.link {
+  color: #c3e1fc;
+  font-size: 17px;
+}
+
+.link:hover {
+  text-shadow: 0 0 6px #4285f4;
+}
+
 .WelcomeScreen {
   position: fixed;
   width: 95%;
+  max-width: 1000px;
   height: 100%;
   top: 0;
-  background: white;
+  background: #2C3D5D;
   float: left;
-  padding: 0%;
+  padding-top: 19%;
   display: block;
   margin-left: center;
   margin-right: center;
