@@ -91,7 +91,7 @@ class App extends Component {
   };
 
   render() {
-    const { locations, numberOfEvents, events } = this.state;
+    const { locations, events } = this.state;
     if (this.state.showWelcomeScreen)
       return (
         <WelcomeScreen
@@ -108,8 +108,7 @@ class App extends Component {
         <h4>Choose your nearest city</h4>
         <CitySearch updateEvents={this.updateEvents} locations={locations} />
         <NumberOfEvents
-          updateEvents={this.updateEvents}
-          numberOfEvents={numberOfEvents}
+          updateNumberOfEvents={(e) => this.updateNumberOfEvents(e)}
         />
         <h4>Events in each city</h4>
         <WarningAlert text={this.state.infoText} className="InfoAlert" />
