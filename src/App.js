@@ -139,7 +139,7 @@ class App extends Component {
               />
               <Tooltip cursor={{ strokeDasharray: "3 3" }} />
               <Legend verticalAlign="top" height={36} />
-              <Scatter name="Events" data={this.getData()} fill="#8884d8" />
+              <Scatter name="Events" data={this.getData()} fill="#3D314A" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>

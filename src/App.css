@@ -10,7 +10,7 @@
 }
 
 .main-title {
-  color: #FF5C5C;
+  color: #FF4747;
 }
 
 .secondary-title {
@@ -123,7 +123,7 @@ input[type="text"], input[type="number"] {
   position: absolute;
   right: 7px;
   bottom: 7px;
-  padding: 5px 8px;
+  padding: 6px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
