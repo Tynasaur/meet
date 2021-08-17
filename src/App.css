@@ -2,10 +2,20 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #fbf8f6;
 }
 
 .App * {
   box-sizing: border-box;
+}
+
+.main-title {
+  color: #FF5C5C;
+}
+
+.secondary-title {
+  color: #373F51;
+  font-size: 20px;
 }
 
 ul {
@@ -73,7 +83,7 @@ input[type="text"], input[type="number"] {
 }
 
 .suggestions>li:hover {
-  background-color: #bcdcdb;
+  background-color: #91B7C7;
 }
 
 .event {
@@ -85,24 +95,43 @@ input[type="text"], input[type="number"] {
   position: relative;
 }
 
+.event-summary {
+  color: #FF5C5C;
+  font-size: 25px;
+}
+
+.event-locations {
+  color: #373F51;
+  font-size: 20px;
+}
+
+.event-date, .about-event {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.calendar-link {
+  color: #45A7C4;
+}
+
+.calendar-link:hover {
+  text-shadow: 0 0 6px #91B7C7;
+}
+
 .showMore, .showLess {
+  font-size: 15px;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 7px;
+  bottom: 7px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
 }
 
-.name {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.group-name {
-  text-transform: uppercase;
-  font-size: 14px;
+.showMore:hover, .showLess:hover {
+  box-shadow: 0 0 300px 0 #3D405B inset, 0 0 8px 4px #8d6974;
+  color: rgb(245, 244, 244);
 }
 
 .going, .visibility {

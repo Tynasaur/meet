@@ -3,8 +3,8 @@ import "./WelcomeScreen.css";
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
     <div className="WelcomeScreen">
-      <h1>Welcome to the Meet app</h1>
-      <h4>
+      <h1 className="welcome-header">Welcome to the Meet app</h1>
+      <h4 className="welcome-header">
         Log in to see upcoming events around the world for full-stack developers
       </h4>
       <div className="button_cont" align="center">
@@ -29,6 +29,7 @@ o.svg"
         </div>
       </div>
       <a
+        className="privacy-policy"
         href="https://tynasaur.github.io/meet/privacy.html"
         rel="nofollow noopener"
       >

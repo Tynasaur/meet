@@ -12,6 +12,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import { WarningAlert } from "./Alert";
 import WelcomeScreen from "./WelcomeScreen";
@@ -104,8 +105,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Meet App</h1>
-        <h4>Choose your nearest city</h4>
+        <h1 className="main-title">Meet App</h1>
+        <h4 className="secondary-title">Choose your nearest city</h4>
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -114,7 +115,7 @@ class App extends Component {
         <NumberOfEvents
           updateNumberOfEvents={(e) => this.updateNumberOfEvents(e)}
         />
-        <h4>Events in each city</h4>
+        <h4 className="secondary-title">Events in each city</h4>
         <WarningAlert text={this.state.infoText} className="InfoAlert" />
 
         <div className="data-vis-wrapper">
@@ -137,6 +138,7 @@ class App extends Component {
                 allowDecimals={false}
               />
               <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <Legend />
               <Scatter name="Events" data={this.getData()} fill="#8884d8" />
             </ScatterChart>
           </ResponsiveContainer>

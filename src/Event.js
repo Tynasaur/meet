@@ -15,10 +15,16 @@ class Event extends Component {
       <div className="event">
         <h1 className="event-summary">{event.summary}</h1>
         <h2 className="event-locations">{event.location}</h2>
-        <h3 className="Event-date">start: {event.start.dateTime}</h3>
-        <h3>About event:</h3>
+        <h3 className="event-date">{event.start.dateTime}</h3>
+        <h3 className="about-event">About event...</h3>
         {this.state.show === true && (
-          <p className="event-details">{event.description}</p>
+          <p className="event-details">
+            {event.description}
+            <br></br>
+            <a className="calendar-link" href={event.htmlLink}>
+              See Details on Google Calendar
+            </a>
+          </p>
         )}
         {this.state.show === false && (
           <button className="showMore" onClick={() => this.handleButton()}>
@@ -30,8 +36,6 @@ class Event extends Component {
             Hide details
           </button>
         )}
-        <br></br>
-        <a href={event.htmlLink}>See Details on Google Calendar</a>
       </div>
     );
   }

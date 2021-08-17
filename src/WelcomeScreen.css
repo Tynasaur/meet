@@ -7,17 +7,17 @@ body {
   background-attachment: fixed;
 }
 
-h1, h4 {
+.welcome-header {
   color: #FDF5DC;
   text-align: center;
 }
 
-.link {
+.privacy-policy {
   color: #c3e1fc;
-  font-size: 17px;
+  font-size: 16px;
 }
 
-.link:hover {
+.privacy-policy:hover {
   text-shadow: 0 0 6px #4285f4;
 }
 
