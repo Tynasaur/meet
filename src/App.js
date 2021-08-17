@@ -115,7 +115,7 @@ class App extends Component {
         <NumberOfEvents
           updateNumberOfEvents={(e) => this.updateNumberOfEvents(e)}
         />
-        <h4 className="secondary-title">Events in each city</h4>
+
         <WarningAlert text={this.state.infoText} className="InfoAlert" />
 
         <div className="data-vis-wrapper">
@@ -138,12 +138,12 @@ class App extends Component {
                 allowDecimals={false}
               />
               <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Legend />
+              <Legend verticalAlign="top" height={36} />
               <Scatter name="Events" data={this.getData()} fill="#8884d8" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>
-
+        <h4 className="secondary-title">Events in each city</h4>
         <EventList events={events} />
       </div>
     );
