@@ -1,6 +1,6 @@
 # meet App
 
-##Project Description
+## Project Description
 
 A serverless, progressive web application (PWA) built using React. Built using test-driven development (TDD) technique, using a Google Calandar API to fetch upcomning events.
 
