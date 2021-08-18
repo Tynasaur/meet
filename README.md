@@ -4,7 +4,7 @@
 
 A serverless, progressive web application (PWA) built using React. Built using test-driven development (TDD) technique, using a Google Calandar API to fetch upcomning events.
 
-##Features
+## Features
 
 * Filter events by city
 * Show/hide event details
@@ -13,9 +13,7 @@ A serverless, progressive web application (PWA) built using React. Built using t
 * Add an app shortcut to the home screen
 * View a chart showing the number of upcoming events by city
 
-##How to get the project running
-
-##Project dependencies
+## Project dependencies
 
 * React
 * Google Calendar API
@@ -24,7 +22,7 @@ A serverless, progressive web application (PWA) built using React. Built using t
 * Jest (for testing)
 * Lighthouse (must pass Lighthouse's PWA checklist)
 
-##User Stories (how to use)
+## User Stories (how to use)
 
 * As a user, I would like to be able to filter events by city so that I can see the list of events that
 take place in that city.
